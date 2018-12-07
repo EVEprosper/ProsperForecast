@@ -83,10 +83,10 @@ setup(
     long_description=README,
     package=find_packages(),
     package_data={
-        '': ['LICENSE', 'README.rst'],
-        'forecast': ['config.j2'],
-        'auth': ['config.j2'],
-        'common': ['version.txt', 'config.j2'],
+        '': ['LICENSE', 'README.rst', 'config.j2'],
+        'forecast': [],
+        'auth': [],
+        'common': ['version.txt', ],
     },
     python_requires='>=3.6',
     install_requires=[
@@ -119,8 +119,8 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'forecast = forecast.manage:cli',
-            'auth = auth.manage:cli',
+            'forecast = forecast.launcher:cli',
+            'auth = auth.launcher:cli',
         ]
     },
     extras_require={
