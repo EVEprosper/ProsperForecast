@@ -1,6 +1,6 @@
 """Flask plugins go here"""
 
-import passlib
+import passlib.context
 import flask_sqlalchemy
 import flask_jwt_extended
 import flask_marshmallow

@@ -2,7 +2,7 @@
 
 from . import resources
 
-class User(resources.db.model):
+class User(resources.db.Model):
     """basic user model"""
 
     id = resources.db.Column(

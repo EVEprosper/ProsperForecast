@@ -11,13 +11,15 @@ from . import resources
 __app_name__ = 'auth'
 __version__ = 'v1'
 
-
-
 HERE = HERE = os.path.abspath(os.path.dirname(__file__))
 
 def create_app(testing=False, cli=False):
     """Flask Application Factory"""
     app = flask.Flask(__app_name__)
+
+    configure_app(app, testing, cli)
+    configure_extension(app, cli)
+    register_blueprints(app)
 
     return app
 
@@ -76,4 +78,4 @@ def register_blueprints(app):
         app (:obj:`flask.Flask`): Flask application
     """
     # ENDPOINTS GO HERE #
-    app.register(views.BLUEPRINT)
+    app.register_blueprint(views.blueprint)

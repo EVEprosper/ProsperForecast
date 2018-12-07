@@ -14,11 +14,11 @@ def cli():
     """cli entry point"""
 
 @cli.command('init')
-@cli.option(
+@click.option(
     '--secret-cfg',
     help='Path to jinja-templated secrets',
 )
-@cli.option(
+@click.option(
     '--config',
     help='Path to configparser file for user configuration',
     default='config.j2',
